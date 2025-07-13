@@ -6,22 +6,19 @@ El personaje **AvatarInnovador** alterna entre dos tipos de patrones de movimien
 
 ---
 
-### Movimiento Lateral Repetitivo ⬈
-El avatar se mueve lateralmente de la siguiente forma:
-- Dos posiciones hacia la **derecha**
-- Dos posiciones hacia la **izquierda**
-- Repite
+### Movimiento Diagonal Repetitivo ⬈
+El avatar se mueve en diagonal de la siguiente forma:
+- Una posición hacia **arriba**
+- Una posición hacia la **derecha**
 
-Esto genera un patrón horizontal que simula un barrido lateral constante.
+Este patrón genera un desplazamiento que sube en zigzag hacia la derecha y le da un comportamiento distinto al resto de los personajes.
 
-#### Ejemplo del movimiento lateral:
-| Turno | Dirección  | Cambio de Columna |
-|-------|------------|-------------------|
-|   1   | Derecha →  | +1                |
-|   2   | Derecha →  | +1                |
-|   3   | Izquierda ←| -1                |
-|   4   | Izquierda ←| -1                |
-| Repite|            |                   |
+#### Ejemplo del movimiento diagonal:
+| Turno | Dirección                 | Cambio                 |
+|-------|---------------------------|------------------------|
+|   1   | Diagonal arriba-derecha ⬈ | Fila -1, Columna +1    |
+|   2   | Diagonal arriba-derecha ⬈ | Fila -1, Columna +1    |
+| Repite|                           |                        |
 
 ---
 
@@ -45,7 +42,6 @@ Esto crea un bucle continuo que representa un patrón circular cerrado.
 ---
 
 ## Beneficio del diseño
-- Distingue al **AvatarInnovador** mediante patrones visuales predecibles pero no manuales.
-- Le da personalidad propia frente a otros avatares (no aleatorio, no controlado por usuario).
-- Muestra polimorfismo aplicado a distintos comportamientos.
-
+- Distingue al **AvatarInnovador** mediante patrones visuales claros y diferenciados.
+- Le da personalidad propia frente a otros avatares (no aleatorio, no manual).
+- Refuerza el polimorfismo aplicado a distintos comportamientos sin modificar la lógica del juego.

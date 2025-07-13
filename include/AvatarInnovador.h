@@ -6,29 +6,22 @@ class AvatarInnovador : public Avatar
 {
 private:
     int paso;
-    int subPasoLateral;
 
 public:
-    AvatarInnovador() : paso(0), subPasoLateral(0) {}
+    AvatarInnovador() : paso(0) {}
 
     void mover(char) override
     {
         if (paso % 2 == 0)
         {
-            if (subPasoLateral % 4 < 2)
-            {
-                setPosicionColumna(getPosicionColumna() + 1);
-                std::cout << "Innovador: derecha → (LATERAL)\n";
-            }
-            else
-            {
-                setPosicionColumna(getPosicionColumna() - 1);
-                std::cout << "Innovador: izquierda ← (LATERAL)\n";
-            }
-            subPasoLateral++;
+            // Movimiento Diagonal arriba-derecha
+            setPosicionFila(getPosicionFila() - 1);
+            setPosicionColumna(getPosicionColumna() + 1);
+            std::cout << "Innovador: diagonal ⬈ (ARRIBA-DERECHA)\n";
         }
         else
         {
+            // Movimiento Circular en 4 pasos
             int subPaso = (paso / 2) % 4;
             switch (subPaso)
             {
